@@ -1,0 +1,30 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #cdd5df;
+  border-radius: 8px;
+}
+
+.search-box svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #748196;
+}
+
+.search-box input {
+  padding-left: 0;
+  border: none;
+}
+
+.search-box:focus-within {
+  outline: 3px solid #d9eeee;
+  border-color: #087b80;
+}
+
+.search-box input:focus {
+  outline: none;
+}

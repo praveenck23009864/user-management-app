@@ -1,0 +1,156 @@
+.user-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 24px;
+  background: white;
+  border: 1px solid #e0e5eb;
+  border-radius: 10px;
+}
+
+.user-card.selected {
+  border-color: #008a94;
+  box-shadow: 0 0 0 1px #008a94;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.tone-0 {
+  color: #075c61;
+  background: #e0f4f2;
+}
+
+.tone-1 {
+  color: #514674;
+  background: #efeaff;
+}
+
+.tone-2 {
+  color: #8b391d;
+  background: #ffe7d9;
+}
+
+.tone-3 {
+  color: #075c61;
+  background: #dcf2ee;
+}
+
+.user-info {
+  min-width: 0;
+}
+
+.user-info h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  letter-spacing: -0.4px;
+  overflow-wrap: anywhere;
+}
+
+.user-info p {
+  margin: 0;
+  color: #586780;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e9ef;
+}
+
+.people-page .card-actions button {
+  padding: 8px;
+  background: transparent;
+  border-color: transparent;
+  font-size: 14px;
+}
+
+.people-page .edit-action {
+  color: #006575;
+}
+
+.people-page .delete-action {
+  color: #c52e42;
+}
+
+.people-page .card-actions button:hover:not(:disabled) {
+  background: #f3f7f8;
+}
+
+@media (max-width: 600px) {
+  .user-card {
+    padding: 20px;
+  }
+  .avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+  }
+}
+
+.delete-confirm {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fff1f2;
+  color: #991b1b;
+}
+
+.delete-confirm p {
+  margin: 0 0 10px;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.delete-confirm-actions button {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #334155;
+  cursor: pointer;
+}
+
+.delete-confirm-actions .confirm-delete-button {
+  border-color: #dc2626;
+  background: #dc2626;
+  color: white;
+}
+
+.delete-confirm-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.people-page .card-actions .confirm-delete-button {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}

@@ -1,0 +1,55 @@
+.chat-side-panel {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e0e5eb;
+  border-radius: 10px;
+}
+
+.chat-side-panel .chat-panel {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.chat-side-panel h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.chat-side-panel p {
+  margin-top: 0;
+}
+
+.chat-side-panel form {
+  margin-top: 16px;
+}
+
+.chat-side-panel input {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.chat-side-panel [role="log"] {
+  max-height: 220px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding-right: 4px;
+}
+
+.chat-side-panel [role="log"] > div {
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  background: #f7f9fb;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+}
+
+.chat-side-panel button {
+  width: 100%;
+}
+
+.chat-message {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

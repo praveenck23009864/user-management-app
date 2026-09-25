@@ -1,0 +1,53 @@
+.people-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 22px 28px 40px;
+}
+
+.workspace {
+  background: white;
+  border: 1px solid #e0e5eb;
+  border-radius: 12px;
+}
+
+.workspace-body {
+  padding: 36px 32px 28px;
+}
+
+.people-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 26px;
+}
+
+.people-layout.with-panel {
+  grid-template-columns: minmax(0, 1.85fr) minmax(300px, 1fr);
+}
+
+@media (max-width: 850px) {
+  .people-layout.with-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .people-page {
+    padding: 16px 12px 28px;
+  }
+  .workspace-body {
+    padding: 22px 16px;
+  }
+}
+
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 850px) {
+  .right-sidebar {
+    grid-row: 1;
+  }
+}
