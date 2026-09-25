@@ -1,53 +1,93 @@
 .people-page {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 22px 28px 40px;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    margin: 0;
+    padding: 12px;
+    background: radial-gradient(circle at 95% 0%, #ddfaf6, transparent 36%), #f2f7fb;
+    color: #183247
 }
 
 .workspace {
-  background: white;
-  border: 1px solid #e0e5eb;
-  border-radius: 12px;
+    width: 100%;
+    min-height: calc(100vh - 24px);
+    background: #fff;
+    border: 1px solid #dce8ef;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(16, 47, 73, .06);
+    overflow: hidden
 }
 
 .workspace-body {
-  padding: 36px 32px 28px;
+    width: 100%;
+    padding: 0 22px 18px
 }
 
 .people-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
-  gap: 26px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+    width: 100%
 }
 
 .people-layout.with-panel {
-  grid-template-columns: minmax(0, 1.85fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(0, 1.55fr) minmax(420px, 1fr)
 }
 
-@media (max-width: 850px) {
-  .people-layout.with-panel {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .people-page {
-    padding: 16px 12px 28px;
-  }
-  .workspace-body {
-    padding: 22px 16px;
-  }
+.people-layout>* {
+    min-width: 0
 }
 
 .right-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+    width: 100%
 }
 
-@media (max-width: 850px) {
-  .right-sidebar {
-    grid-row: 1;
-  }
+.editor-panel,
+.chat-side-panel {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0
+}
+
+.people-page button {
+    transition: background-color .2s, border-color .2s, box-shadow .2s, transform .2s
+}
+
+.people-page button:active:not(:disabled) {
+    transform: translateY(1px)
+}
+
+@media(max-width:1100px) {
+    .people-layout.with-panel {
+        grid-template-columns: minmax(0, 1fr)
+    }
+}
+
+@media(max-width:600px) {
+    .people-page {
+        padding: 6px
+    }
+
+    .workspace {
+        border-radius: 14px;
+        min-height: calc(100vh - 12px)
+    }
+
+    .workspace-body {
+        padding: 0 12px 15px
+    }
+
+    .people-layout {
+        gap: 15px
+    }
+
+    .right-sidebar {
+        gap: 15px
+    }
 }

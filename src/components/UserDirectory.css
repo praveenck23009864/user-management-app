@@ -1,44 +1,39 @@
 .directory {
-  min-width: 0;
+    min-width: 0
 }
 
 .user-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px
 }
 
 .user-count {
-  margin: 22px 0 0;
-  color: #68768b;
-  font-size: 13px;
+    margin: 14px 0 0;
+    color: #60758b;
+    font-size: 13px
 }
 
 .empty-state {
-  padding: 36px 20px;
-  color: #627087;
-  text-align: center;
-  background: #f8fafb;
-  border-radius: 10px;
+    padding: 38px 20px;
+    color: #627087;
+    text-align: center;
+    background: #f6fafc;
+    border: 1px dashed #d7e5eb;
+    border-radius: 12px
 }
 
-@media (max-width: 1200px) {
-  .with-panel .user-grid {
-    grid-template-columns: 1fr;
-  }
+.empty-state button {
+    padding: 9px 15px;
+    border-radius: 9px;
+    border: 1px solid #b5d6d3;
+    background: #ecf9f6;
+    color: #086963;
+    font-weight: 700
 }
 
-@media (max-width: 850px) {
-  .with-panel .user-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .user-grid {
-    grid-template-columns: 1fr;
-  }
-  .with-panel .user-grid {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:600px) {
+    .user-grid {
+        grid-template-columns: 1fr
+    }
 }

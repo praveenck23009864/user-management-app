@@ -1,156 +1,157 @@
 .user-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 24px;
-  background: white;
-  border: 1px solid #e0e5eb;
-  border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 142px;
+    padding: 16px 17px 12px;
+    background: #fff;
+    border: 1px solid #dce8f2;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(21, 50, 77, .025);
+    transition: transform .2s, border-color .2s, box-shadow .2s
+}
+
+.user-card:hover {
+    transform: translateY(-2px);
+    border-color: #a2d7ce;
+    box-shadow: 0 9px 22px rgba(15, 118, 110, .08)
 }
 
 .user-card.selected {
-  border-color: #008a94;
-  box-shadow: 0 0 0 1px #008a94;
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, .09)
 }
 
 .user-details {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0
 }
 
 .avatar {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 66px;
-  height: 66px;
-  border-radius: 50%;
-  font-size: 24px;
-  font-weight: 500;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 800;
+    color: #12585e;
+    background: #dff8f4
 }
 
-.tone-0 {
-  color: #075c61;
-  background: #e0f4f2;
+.avatar.tone-1 {
+    background: #eee8ff;
+    color: #594b89
 }
 
-.tone-1 {
-  color: #514674;
-  background: #efeaff;
+.avatar.tone-2 {
+    background: #ffebdf;
+    color: #9b4c26
 }
 
-.tone-2 {
-  color: #8b391d;
-  background: #ffe7d9;
-}
-
-.tone-3 {
-  color: #075c61;
-  background: #dcf2ee;
+.avatar.tone-3 {
+    background: #e1f3f9;
+    color: #236782
 }
 
 .user-info {
-  min-width: 0;
+    min-width: 0
 }
 
 .user-info h2 {
-  margin: 0 0 6px;
-  font-size: 19px;
-  letter-spacing: -0.4px;
-  overflow-wrap: anywhere;
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 800;
+    color: #193249;
+    margin: 0 0 3px;
+    overflow-wrap: anywhere
 }
 
 .user-info p {
-  margin: 0;
-  color: #586780;
-  font-size: 14px;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #6b7e91;
+    margin: 0;
+    overflow-wrap: anywhere
 }
 
 .card-actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 24px;
-  padding-top: 12px;
-  border-top: 1px solid #e5e9ef;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    flex-wrap: wrap;
+    border-top: 1px solid #e7edf3;
+    margin-top: 15px;
+    padding-top: 11px
 }
 
-.people-page .card-actions button {
-  padding: 8px;
-  background: transparent;
-  border-color: transparent;
-  font-size: 14px;
+.card-actions>button,
+.delete-confirm button {
+    min-height: 33px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 800
 }
 
-.people-page .edit-action {
-  color: #006575;
+.card-actions .edit-action {
+    background: #eaf7fa;
+    color: #116a78
 }
 
-.people-page .delete-action {
-  color: #c52e42;
+.card-actions .edit-action:hover {
+    background: #d5eef2
 }
 
-.people-page .card-actions button:hover:not(:disabled) {
-  background: #f3f7f8;
+.card-actions .delete-action {
+    background: #fff0f2;
+    color: #ba2940
 }
 
-@media (max-width: 600px) {
-  .user-card {
-    padding: 20px;
-  }
-  .avatar {
-    width: 56px;
-    height: 56px;
-    font-size: 20px;
-  }
+.card-actions .delete-action:hover {
+    background: #ffe0e5
 }
 
 .delete-confirm {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #fecaca;
-  border-radius: 10px;
-  background: #fff1f2;
-  color: #991b1b;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px
 }
 
 .delete-confirm p {
-  margin: 0 0 10px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #a8243e
 }
 
 .delete-confirm-actions {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 8px;
+    display: flex;
+    gap: 7px
 }
 
 .delete-confirm-actions button {
-  padding: 8px 14px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  background: white;
-  color: #334155;
-  cursor: pointer;
+    background: #f1f5f9;
+    color: #314457
 }
 
 .delete-confirm-actions .confirm-delete-button {
-  border-color: #dc2626;
-  background: #dc2626;
-  color: white;
+    background: #bc2c43;
+    color: white
 }
 
-.delete-confirm-actions button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.people-page .card-actions .confirm-delete-button {
-  background: #dc2626;
-  color: white;
-  border-color: #dc2626;
+@media(max-width:600px) {
+    .user-card {
+        min-height: 132px
+    }
 }
