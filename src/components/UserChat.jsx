@@ -1,9 +1,7 @@
-
+import './UserChat.css';
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import "./UserChat.css";
-
 export default function UserChat({ users = [] }) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -26,7 +24,10 @@ export default function UserChat({ users = [] }) {
 
     const question = input.trim();
 
-    if (!question || thinking) return;
+    if (!question || thinking) 
+
+      
+      return;
 
     const history = [
       ...messages,
@@ -46,7 +47,10 @@ export default function UserChat({ users = [] }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+
+
         },
+
         body: JSON.stringify({
           messages: history,
           users: users.map((user) => ({
@@ -200,11 +204,10 @@ export default function UserChat({ users = [] }) {
         {messages.map((message, index) => (
           <div
             key={index}
-            className={`message-row ${
-              message.role === "user"
+            className={`message-row ${message.role === "user"
                 ? "message-user"
                 : "message-ai"
-            }`}
+              }`}
           >
             <span className="message-author">
               {message.role === "user"

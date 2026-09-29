@@ -1,65 +1,37 @@
-# User Management App — simple component structure
+# RAKA tech — User Workspace
 
-This is the refactored React CRUD and AI chat project from the uploaded archive.
+A responsive React and Express user dashboard built from your RAKA project. It includes dashboard, searchable user table and cards, analytics based on fetched users, AI assistant, settings, admin login, and slide-over user forms. The frontend uses the existing backend proxy for the Playground users API. Only admins can add, edit, delete, or ask the AI assistant.
 
-## Start the app
+## Run locally
 
-Extract this ZIP. Open the `react-crud-playground` folder in VS Code. Run commands from this folder, not its parent.
+Open this folder in VS Code. Use **two terminals**:
 
-Frontend terminal:
+**Backend**
 
-```sh
+```powershell
+cd backend
+npm install
+Copy-Item .env.example .env
+node admin.js
+```
+
+Choose a password of at least 12 characters. Put the printed hash in `backend/.env` as `ADMIN_PASSWORD_HASH`; change `ADMIN_EMAIL` to your login email. Fill `OLLAMA_API_KEY` and `OLLAMA_MODEL` only if using AI chat. Then run:
+
+```powershell
+npm start
+```
+
+**Frontend** (from the project root):
+
+```powershell
 npm install
 npm run dev
 ```
 
-Backend terminal:
+Open `http://localhost:5173`. The backend runs on port 5000. The dashboard can show users as a viewer; click **Admin login** to unlock changes and chat. Your local `.env` is intentionally absent from this project file. Never commit it to GitHub.
 
-```sh
-cd backend
-npm install
-npm start
-```
+## Notes
 
-Keep your existing backend `.env` file, or copy `backend/.env.example` to `backend/.env` and fill in your Ollama API key and cloud model name. The real credential file is excluded from the download. Keep the backend port at 5000 to match the Vite proxy. Open the URL printed by Vite.
-
-## File organization
-
-`src` contains `App.jsx`, the required `main.jsx` entry file, and `components/`. Build configuration and the chat backend remain outside `src` because they are required to run the project.
-
-| File under components | Responsibility |
-| --- | --- |
-| UserManagement.jsx | Shared state, user requests, and overall page layout |
-| PageHeader.jsx | Page title and Add user button |
-| UserDirectory.jsx | Filtering, loading/error/empty states, and user list |
-| UserSearch.jsx | Search input |
-| UserCard.jsx | User information, Edit, and in-app delete confirmation |
-| UserForm.jsx | Add/edit fields and validation |
-| UserChat.jsx | Conversation, thinking state, and chat request |
-| usersApi.js | GET, POST, PATCH, and DELETE request helpers |
-| Global.css | Shared fonts, controls, and feedback styles |
-
-Every UI component imports its matching CSS file. Global.css is imported once in main.jsx. App.jsx imports UserManagement and returns it; UserManagement brings the smaller UI components together.
-
-## Readability changes
-
-Components follow imports, a normal function with a return, and a final default export. Ordinary function declarations or function callbacks replace arrow functions. The app uses core React hooks: useState for data, useEffect for loading/focus, and useRef for focus and preventing duplicate/stale requests. No custom hooks, context, reducers, or extra state libraries were added.
-
-App.jsx has no API logic or try/catch. Necessary error handling remains with user requests and chat so failed requests show a message and unlock controls. Duplicate unused form/list components, source assets, unused styles, and repeated delete CSS were removed. The missing Add user button is restored so a closed form can be reopened. The delete confirmation button now has readable white text.
-
-## Verification
-
-- ESLint passed.
-- Vite production build passed.
-- DOM interaction checks with mocked API responses passed: listing, search and no-match state, editing, adding/reopening the form, save failure/retry, delete/cancel, chat thinking/history/error, and loading failure/retry.
-- No runtime errors occurred in those DOM checks.
-- Live Playground API mutations and Ollama Cloud calls were not tested. Browser visual checks were unavailable; responsive CSS rules were retained.
-
-To repeat the static checks:
-
-```sh
-npm run lint
-npm run build
-```
-
-Dependencies, generated build output, Git metadata, and real environment credentials are not included. Install dependencies separately in both the project folder and backend folder.
+- Status is shown as **Unknown** when the Playground API does not supply it. Analytics count only fields returned by the API; there are no invented join dates or trends.
+- The Playground API and Ollama Cloud need internet access. AI chat requires valid Ollama credentials. The API sandbox may be shared or reset independently of this app.
+- Verify the project with `npm run lint` and `npm run build`.

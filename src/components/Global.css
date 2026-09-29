@@ -1,87 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
-
-:root {
-    font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
-    color: #183247;
-    background: #f4f8fb;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased
-}
-
-* {
-    box-sizing: border-box
-}
-
-html,
-body,
-#root {
-    width: 100%;
-    min-height: 100%;
-    margin: 0
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh
-}
-
-#root {
-    min-height: 100vh;
-    max-width: none;
-    padding: 0
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
 }
 
 button,
 input,
 textarea,
 select {
-    font: inherit
+  font-family: inherit;
 }
 
-button {
-    cursor: pointer
+.raka-app {
+  --bg: #f5f8fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fbfd;
+
+  --text: #142b43;
+  --text-soft: #708297;
+  --text-light: #94a3b5;
+
+  --border: #e1e9f0;
+  --border-strong: #d2dee8;
+
+  --primary: #0f766e;
+  --primary-dark: #0b625c;
+  --primary-soft: #e4f7f2;
+
+  --danger: #dc3545;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--bg);
+
+  color: var(--text);
 }
 
-button:disabled {
-    cursor: not-allowed
-}
+.surface {
+  border: 1px solid var(--border);
+  border-radius: 18px;
 
-input,
-textarea,
-select {
-    min-width: 0
-}
+  background: var(--surface);
 
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #8bdcd1;
-    outline-offset: 2px
-}
-
-.primary-button {
-    border: 0;
-    border-radius: 11px;
-    background: #0d746e;
-    color: #fff;
-    font-weight: 800;
-    padding: 11px 20px;
-    min-height: 44px
-}
-
-.primary-button:hover:not(:disabled) {
-    background: #075e59
-}
-
-.error {
-    color: #b42335;
-    font-size: 13px
-}
-
-.success-message {
-    padding: 12px 16px;
-    background: #e9f9f2;
-    color: #126449;
-    border-radius: 10px;
-    font-weight: 600
+  box-shadow:
+    0 6px 20px rgba(20, 45, 65, 0.04);
 }

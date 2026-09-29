@@ -1,39 +1,122 @@
-.directory {
-    min-width: 0
+.users-panel {
+  overflow: hidden;
+
+  padding: 0;
 }
 
-.user-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px
+.users-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  border-bottom: 1px solid var(--border);
 }
 
-.user-count {
-    margin: 14px 0 0;
-    color: #60758b;
-    font-size: 13px
+.table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
 }
 
-.empty-state {
-    padding: 38px 20px;
-    color: #627087;
-    text-align: center;
-    background: #f6fafc;
-    border: 1px dashed #d7e5eb;
-    border-radius: 12px
+.users-panel table {
+  width: 100%;
+
+  border-collapse: collapse;
 }
 
-.empty-state button {
-    padding: 9px 15px;
-    border-radius: 9px;
-    border: 1px solid #b5d6d3;
-    background: #ecf9f6;
-    color: #086963;
-    font-weight: 700
+.users-panel th {
+  padding: 13px 17px;
+
+  border-bottom: 1px solid var(--border);
+
+  background: #f8fafc;
+
+  color: #718397;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
 }
 
-@media(max-width:600px) {
-    .user-grid {
-        grid-template-columns: 1fr
-    }
+.users-panel td {
+  padding: 13px 17px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text);
+
+  font-size: 12px;
+
+  vertical-align: middle;
+}
+
+.users-panel tbody tr {
+  cursor: pointer;
+
+  transition: background 0.15s ease;
+}
+
+.users-panel tbody tr:hover {
+  background: var(--surface-soft);
+}
+
+.index-cell {
+  width: 50px;
+
+  color: var(--text-light) !important;
+}
+
+.email-cell {
+  color: var(--text-soft) !important;
+}
+
+.table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 15px 18px;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--text-soft);
+
+  font-size: 11px;
+}
+
+.pagination {
+  display: flex;
+
+  gap: 5px;
+}
+
+.pagination button {
+  min-width: 32px;
+  height: 32px;
+
+  padding: 0 8px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--surface);
+
+  color: var(--text-soft);
+
+  cursor: pointer;
+}
+
+.pagination button.current {
+  border-color: var(--primary);
+
+  background: var(--primary);
+
+  color: #ffffff;
 }
