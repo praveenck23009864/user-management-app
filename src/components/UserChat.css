@@ -1269,3 +1269,173 @@
   background: #0d1422;
   color: #d5f7ed;
 }
+/* AI-generated data tables */
+
+.raka-app .chat-markdown {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.raka-app .message-ai .message-bubble {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.raka-app .chat-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+
+  margin: 14px 0;
+
+  border: 1px solid var(--border, #dbe3ed);
+  border-radius: 12px;
+}
+
+.raka-app .chat-table-scroll:focus-visible {
+  outline: 2px solid var(--primary, #0f766e);
+  outline-offset: 3px;
+}
+
+.raka-app .chat-table-scroll table {
+  width: 100%;
+  margin: 0;
+
+  border-collapse: collapse;
+
+  background: var(--surface, #ffffff);
+  color: var(--text, #142b43);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.raka-app .chat-table-scroll th,
+.raka-app .chat-table-scroll td {
+  min-width: 120px;
+  padding: 12px 14px;
+
+  border-bottom: 1px solid var(--border, #dbe3ed);
+
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.raka-app .chat-table-scroll th {
+  background: var(--surface-soft, #f3f7fa);
+  font-weight: 700;
+}
+
+.raka-app .chat-table-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.raka-app .chat-table-scroll tbody tr:hover {
+  background: var(--primary-soft, #e4f7f2);
+}
+.raka-app .ai-data-chart {
+  margin-top: 16px;
+  padding: 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+  color: var(--text);
+}
+
+.raka-app .ai-data-chart h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.raka-app .ai-chart-note {
+  margin: 0 0 18px;
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.raka-app .ai-chart-items {
+  display: grid;
+  gap: 16px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.raka-app .ai-chart-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.raka-app .ai-chart-label > span {
+  overflow-wrap: anywhere;
+}
+
+.raka-app .ai-chart-label strong {
+  white-space: nowrap;
+}
+
+.raka-app .ai-chart-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+
+  margin-right: 7px;
+  border-radius: 3px;
+}
+
+.raka-app .ai-chart-track {
+  height: 12px;
+  overflow: hidden;
+
+  border-radius: 999px;
+  background: var(--border);
+}
+
+.raka-app .ai-chart-fill {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.raka-app .ai-donut {
+  display: grid;
+  place-items: center;
+
+  width: min(190px, 100%);
+  aspect-ratio: 1;
+
+  margin: 20px auto;
+  border-radius: 50%;
+}
+
+.raka-app .ai-donut-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 68%;
+  height: 68%;
+
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.raka-app .ai-donut-center strong {
+  font-size: 30px;
+}
+
+.raka-app .ai-donut-center span {
+  color: var(--text-soft);
+  font-size: 12px;
+}

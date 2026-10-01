@@ -16,7 +16,7 @@
 
   color: var(--text);
 
-  
+
 
   font-size: 12px;
   font-weight: 700;
@@ -44,8 +44,7 @@
   border-color: #70bdb3;
 
   box-shadow:
-    0 0 0 3px
-    rgba(15, 118, 110, 0.1);
+    0 0 0 3px rgba(15, 118, 110, 0.1);
 }
 
 .user-form .error {
@@ -121,8 +120,7 @@
   color: var(--text);
 
   box-shadow:
-    -14px 0 40px
-    rgba(15, 29, 43, 0.13);
+    -14px 0 40px rgba(15, 29, 43, 0.13);
 
   animation:
     drawerIn 0.22s ease;
@@ -196,7 +194,7 @@
   font-size: 13px;
 }
 
-.details-fields > div {
+.details-fields>div {
   display: grid;
 
   grid-template-columns:
@@ -267,8 +265,7 @@
   color: var(--text);
 
   box-shadow:
-    0 20px 60px
-    rgba(8, 20, 30, 0.25);
+    0 20px 60px rgba(8, 20, 30, 0.25);
 
   text-align: center;
 }
@@ -307,7 +304,7 @@
   line-height: 1.6;
 }
 
-.confirm-card > div {
+.confirm-card>div {
   display: grid;
 
   grid-template-columns:
@@ -325,7 +322,119 @@
     grid-template-columns: 1fr;
   }
 
-  .confirm-card > div {
+  .confirm-card>div {
     grid-template-columns: 1fr;
   }
+}
+
+/* Form fields and validation */
+.raka-app .user-form .form-heading {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.raka-app .user-form .form-heading h2 {
+  margin: 0 0 8px;
+}
+
+.raka-app .user-form .form-heading p {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.raka-app .user-form .close-button {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.raka-app .user-form .address-fields {
+  margin: 8px 0 20px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.raka-app .user-form legend {
+  color: var(--text-soft);
+  padding: 0 6px;
+  font-size: 13px;
+}
+
+.raka-app .user-form input[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.raka-app .user-form .delete-user-button {
+  color: #b42335;
+  border-color: #e3a7af;
+  background: #fff1f3;
+}
+
+.raka-app .user-form button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.raka-app .user-form .form-footer {
+  flex-wrap: wrap;
+}
+
+.raka-app .user-form input {
+  box-sizing: border-box;
+}
+
+.raka-app .user-form .error,
+.raka-app .confirm-card .error {
+  color: var(--danger);
+}
+
+/* Input placeholders */
+.raka-app .user-form input::placeholder {
+  color: var(--text-soft, #64748b);
+  font-size: 13px;
+  opacity: 1;
+}
+
+/* Form validation alert */
+.raka-app .user-form .form-alert {
+  margin: 16px 0;
+  padding: 14px 16px;
+
+  border: 1px solid #f0a5ae;
+  border-left: 4px solid #c6283d;
+  border-radius: 10px;
+
+  background: #fff1f3;
+  color: #9f1239;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.raka-app .user-form .form-alert strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.raka-app .user-form .form-alert p {
+  margin: 4px 0;
+}
+
+.raka-app .user-form .form-alert ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+
+/* Dark theme */
+.raka-app.theme-dark .user-form .form-alert {
+  background: #351e29;
+  border-color: #a64860;
+  color: #ffb8c5;
 }
