@@ -133,3 +133,58 @@
 
   border-radius: 8px;
 }
+.admin-login-card .admin-password-field {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.admin-login-card .admin-password-field input {
+  box-sizing: border-box;
+
+  width: 100%;
+  min-height: 46px;
+
+  margin: 0;
+  padding-right: 52px;
+}
+
+.admin-login-card .admin-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--text-soft, #64748b);
+  box-shadow: none;
+
+  cursor: pointer;
+}
+
+.admin-login-card .admin-password-toggle:hover {
+  background: rgba(100, 116, 139, 0.12);
+}
+
+.admin-login-card .admin-password-toggle:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 1px;
+}
+
+.admin-login-card .admin-password-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
